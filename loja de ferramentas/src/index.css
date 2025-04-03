@@ -1,0 +1,88 @@
+.App {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #388e3c;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.registro-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.registro-link span {
+  color: #4CAF50;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
