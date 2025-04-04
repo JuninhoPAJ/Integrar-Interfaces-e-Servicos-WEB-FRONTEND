@@ -1,36 +1,59 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './login.css'; 
 
-const login = () => {
+const Login = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
-    return (
-        <div className="App">
-          <h1>Login <br /> Loja de Carros</h1>
-          <form>
-            <div className="form-group">
-              <label htmlFor="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Digite seu email"
-              />
-            </div>
-            <div className="form-group">
-              <label htmlFor="senha">Senha</label>
-              <input
-                type="password"
-                id="senha"
-                placeholder="Digite sua senha"
-              />
-            </div>
-            <button type="submit" onClick={() => navigate('/home')}>Entrar</button>
-          </form>
-          <p className="registro-link">
-            Não tem uma conta? <span onClick={() => navigate('/')}>Cadastre-se</span>
-          </p>
-        </div>
-      );
-}
+  return (
+    <div className="login-container">
+      <div className="login-card">
+        <h1 className="login-title">
+          Bem-vindo à<br />
+          <span>Loja de Carros</span>
+        </h1>
+        
+        <form className="login-form">
+          <div className="form-group">
+            <label htmlFor="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Digite seu e-mail"
+              required
+              className="form-input"
+            />
+          </div>
 
-export default login
+          <div className="form-group">
+            <label htmlFor="senha">Senha</label>
+            <input
+              type="password"
+              id="senha"
+              placeholder="Digite sua senha"
+              required
+              className="form-input"
+            />
+          </div>
+
+          <button type="submit" className="login-button">
+            Entrar
+          </button>
+        </form>
+
+        <p className="register-link">
+          Não tem uma conta?{' '}
+          <span 
+            className="register-span"
+            onClick={() => navigate('/')}
+          >
+            Cadastre-se
+          </span>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
+
