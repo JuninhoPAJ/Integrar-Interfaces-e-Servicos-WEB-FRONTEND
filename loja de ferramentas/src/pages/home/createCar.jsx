@@ -13,11 +13,17 @@ function CarForm() {
     const [cars, setCars] = useState([]);
     const [editingCar, setEditingCar] = useState(null);  // Estado para armazenar o carro que está sendo editado
 
+    
     // Função para buscar os carros
     async function getCars() {
         try {
-            const response = await api.get('/cars');
-            setCars(response.data);
+            const token = localStorage.getItem('token');
+            const responseCars = await api.get('/cars', {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            });
+            setCars(responseCars.data);
         } catch (error) {
             console.error('Erro ao buscar carros:', error);
         }
@@ -36,7 +42,6 @@ function CarForm() {
                 image
             });
 
-            console.log('Carro criado:', response.data);
             // Após a criação, atualiza a lista de carros
             setCars(prevCars => [...prevCars, response.data.car]);
         } catch (error) {
@@ -168,7 +173,7 @@ function CarForm() {
                         <p>Carros não encontrados.</p>
                     )}
                 </div>
-                <button type='submit' onClick={() => navigate('/home')}>voltar</button>
+                <button type='submit' onClick={() => navigate('/gerente')}>voltar</button>
             </div>
         </div>
     );

@@ -31,6 +31,9 @@ const Home = () => {
           <h2>Loja de Carros</h2>
         </div>
         <div className="navbar-buttons">
+          <button onClick={() => navigate('/createCar')} className="nav-button">
+            Cadastrar Carro
+          </button>
           <button onClick={() => navigate('/login')} className="nav-button logout-button">
             Logout
           </button>
