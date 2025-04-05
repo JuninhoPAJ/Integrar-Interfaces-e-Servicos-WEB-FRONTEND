@@ -1,1 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap'); /* fonte usada *
+.home-container {
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .car-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .car-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 200px; /* Define uma largura fixa para cada item */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .car-item:hover {
+    transform: translateY(-10px); /* Efeito de hover */
+  }
+  
+  .car-image {
+    width: 100%; /* A largura será 100% do container */
+    height: auto; /* A altura será ajustada automaticamente para manter a proporção */
+    max-height: 150px; /* Define a altura máxima da imagem */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem deformar */
+    border-radius: 8px; /* Adiciona bordas arredondadas para a imagem */
+  }
+  
+  .accessory-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .accessory-list li {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .no-accessories {
+    color: #888;
+    font-size: 14px;
+  }
+  

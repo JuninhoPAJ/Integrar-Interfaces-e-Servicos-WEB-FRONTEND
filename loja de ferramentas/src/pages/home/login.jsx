@@ -36,7 +36,7 @@ const Login = () => {
             />
           </div>
 
-          <button type="submit" className="login-button">
+          <button type="submit" className="login-button" onClick={() => navigate('/home')}>
             Entrar
           </button>
         </form>

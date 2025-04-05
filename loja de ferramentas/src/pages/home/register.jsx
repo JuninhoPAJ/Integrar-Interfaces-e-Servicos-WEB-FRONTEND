@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './register.css'; 
+import api from '../../services/api';
 
 const Home = () => {
 
@@ -50,6 +51,15 @@ const Home = () => {
 
           <button className="register-button" onClick={() => navigate('/login')}>Cadastrar</button>
         </form>
+        <p className="register-link">
+          Já tem uma conta?{' '}
+          <span 
+            className="register-span"
+            onClick={() => navigate('/login')}
+          >
+            Login
+          </span>
+        </p>
       </div>
     </div>
   );
