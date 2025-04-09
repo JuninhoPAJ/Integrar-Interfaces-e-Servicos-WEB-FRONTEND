@@ -13,15 +13,15 @@ function CarForm() {
     const [cars, setCars] = useState([]);
     const [editingCar, setEditingCar] = useState(null);  // Estado para armazenar o carro que está sendo editado
 
-    
+
     // Função para buscar os carros
     async function getCars() {
         try {
             const token = localStorage.getItem('token');
             const responseCars = await api.get('/cars', {
-              headers: {
-                Authorization: `Bearer ${token}`
-              }
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
             });
             setCars(responseCars.data);
         } catch (error) {
@@ -151,6 +151,15 @@ function CarForm() {
                                 ) : (
                                     <p>Imagem não disponível</p>
                                 )}
+                                
+                                {car.doc ? (
+                                    <ul className="accessory-list">
+                                        <li key={car.doc._id}>Data de Expiração: {car.doc.expirationDate}</li>
+                                    </ul>
+                                ) : (
+                                    <p className="no-accessories">Nenhum documento encontrado cadastrado.</p>
+                                )}
+
                                 {car.accessory && car.accessory.length > 0 ? (
                                     <ul className="accessory-list">
                                         {car.accessory.map((acc, index) => (

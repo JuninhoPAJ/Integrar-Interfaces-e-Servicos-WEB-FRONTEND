@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
-import './Home.css'; 
+import './Home.css';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
@@ -50,6 +50,15 @@ const Home = () => {
                 ) : (
                   <p>Imagem não disponível</p>
                 )}
+
+                {car.doc ? (
+                  <ul className="accessory-list">
+                    <li key={car.doc._id}>Data de Expiração: {car.doc.expirationDate}</li>
+                  </ul>
+                ) : (
+                  <p className="no-accessories">Nenhum documento encontrado cadastrado.</p>
+                )}
+                
                 {car.accessory && car.accessory.length > 0 ? (
                   <ul className="accessory-list">
                     {car.accessory.map((acc) => (

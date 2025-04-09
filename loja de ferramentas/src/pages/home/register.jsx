@@ -59,7 +59,7 @@ const Register = () => {
     }
 
     // Se passar nas validações, chama a função de registro
-    setError('');
+    setError('');  // Limpa qualquer erro anterior
     registrar();
   };
 
@@ -70,7 +70,7 @@ const Register = () => {
           Cadastro<br />
           <span>Loja de Carros</span>
         </h1>
-        
+
         <form className="register-form" onSubmit={validarFormulario}>
           <div className="form-group">
             <label htmlFor="nome">Nome</label>
@@ -114,7 +114,7 @@ const Register = () => {
           {/* Exibindo mensagem de erro, se houver */}
           {error && <p className="error-message">{error}</p>}
 
-          <button type="submit" className="register-button" onClick={() => navigate('/login')}>
+          <button type="submit" className="register-button">
             Cadastrar
           </button>
         </form>
